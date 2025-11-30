@@ -193,7 +193,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/tempo/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/tempo/discussions)
-- **Email**: your.email@example.com
+- **Email**: iyanu752@gmail.com
 
 ## 🌟 Star History
 
