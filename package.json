@@ -1,0 +1,84 @@
+{
+  "name": "tempo",
+  "displayName": "TEMPO - AI Code Completion",
+  "description": "AI-powered code completion using OpenRouter",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Machine Learning",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tempo.toggle",
+        "title": "Toggle TEMPO"
+      }
+    ],
+    "configuration": {
+      "title": "TEMPO",
+      "properties": {
+        "tempo.openRouterApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your OpenRouter API key",
+          "order": 1
+        },
+        "tempo.model": {
+          "type": "string",
+          "default": "x-ai/grok-4.1-fast:free",
+          "description": "OpenRouter model to use",
+          "enum": [
+            "anthropic/claude-3.5-sonnet",
+            "anthropic/claude-3-opus",
+            "openai/gpt-4-turbo",
+            "openai/gpt-3.5-turbo",
+            "google/gemini-pro",
+            "meta-llama/llama-3-70b-instruct",
+            "mistralai/mistral-large"
+          ],
+          "order": 2
+        },
+        "tempo.maxTokens": {
+          "type": "number",
+          "default": 150,
+          "description": "Maximum tokens for completion",
+          "minimum": 50,
+          "maximum": 500,
+          "order": 3
+        },
+        "tempo.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable TEMPO",
+          "order": 4
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  }
+}
